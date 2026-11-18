@@ -189,10 +189,14 @@ The PDF and PowerPoint fit the map on one page whenever its text stays readable,
 
 - Splits fall in the gaps between blocks, never through one.
 - Each part repeats the row names, so every page makes sense on its own.
-- A connection between blocks in different parts isn't drawn as a long line across the page. Instead, each end gets a short lead from its own block: a line out from the block, the connection's label on the line (such as "supports"), and an off-page connector at the end, the pointed box used in flowcharts. Both ends have the same connector label, such as **A-1**, and the same colour, so you find A-1 on one block and look for A-1 on the other part. The first split's connectors are A-1, A-2, and so on, the next split's are B-1, B-2, and so on.
-- Each connector points the way its connection flows, and points the same way at both ends: right for a connection that carries on to a later part, left for one that goes back to an earlier part.
-- Leads come out of the top or bottom of a block, on the side with room, three across. A second row reaches further out between the first, so up to five fit on each edge.
 - The heading on each page says which part it is, such as "The map (part 2 of 3)".
+
+You choose how connections between parts are shown, under **Maps ▾ › When a map is split across pages**. Blockplan remembers your choice on that computer.
+
+- **Coloured lines** (the default): every line is drawn as normal and simply runs off the edge of one part and on at the next. Each line that crosses a split gets its own colour and its own small shape repeated along it (circles, squares, triangles, diamonds, crosses, or none), so you can pick it up on the next part. Its label is drawn in the same colour. Twelve colours and six shapes give 72 distinct lines before any repeat. Dashes still mean "planned", as they do everywhere else.
+- **Labelled connectors**: a line that crosses a split isn't drawn across the page. Instead each end gets a short lead from its own block: a line out from the block, the connection's label on the line (such as "supports"), and an off-page connector at the end, the pointed box used in flowcharts. Both ends have the same connector label, such as **A-1**, and the same colour. The first split's connectors are A-1, A-2, and so on, the next split's are B-1, B-2, and so on. Each connector points the way its connection flows, the same way at both ends. Leads come out of the top or bottom of a block, on the side with room, up to five on each edge.
+
+Only lines that need it are picked out. Lines that stay within one part are grey, unless a line crosses three or more other lines, in which case it gets its own colour and shape too. That applies to the picture and to maps that fit on one page as well, so a busy map is easier to follow, while a tidy one stays plain.
 
 ### Picture
 
@@ -400,7 +404,7 @@ Yes. The fonts and the PDF and PowerPoint makers are included, so everything wor
 - Export to PowerPoint, with editable tables.
 - Export the map as an editable diagram for Visio or draw.io, with each block's details as data.
 - Wide maps in the PDF and PowerPoint fit one page when the text stays readable, in landscape where possible. Otherwise they're split between blocks, with flowchart-style off-page connectors labelled the same on both pages, such as A-1, and pointing the way the connection flows.
-- A connection that crosses a split isn't drawn as a line. Each end gets a short coloured lead from its block, with the connection's label and a connector, and the same connector label and colour at both ends.
+- Maps split across pages: a choice between coloured lines (each crossing line in its own colour and shape) and labelled connectors (short labelled leads with matching tags such as A-1). Lines that cross three or more others are picked out the same way on any map.
 
 **1.3.2**
 - Docker serves Blockplan on 443, the standard HTTPS port, so the address is `https://localhost`. Change it with `BLOCKPLAN_PORT` in `.env`, with no need to edit `docker-compose.yml`.
